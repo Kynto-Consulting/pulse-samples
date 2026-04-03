@@ -7,6 +7,14 @@ Practical examples for consuming `@arubiku/pulse-lib` and connecting to a deploy
 
 This repo is not a product app. It is a copy-paste friendly reference for different runtime and framework setups.
 
+## Visual preview
+
+These are static SVG previews, not live screenshots. They are meant to show the shape of the examples and the end-to-end flow before you wire them into your own app.
+
+![Pulse flow](docs/flow.svg)
+
+![Pulse sample gallery](docs/gallery.svg)
+
 ## Included examples
 
 - `native-js`
