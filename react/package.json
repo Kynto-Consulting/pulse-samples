@@ -1,0 +1,9 @@
+{
+  "name": "pulse-sample-react",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@arubiku/pulse-lib": "^1.0.0",
+    "react": "^18.2.0"
+  }
+}

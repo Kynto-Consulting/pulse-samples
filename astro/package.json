@@ -1,0 +1,9 @@
+{
+  "name": "pulse-sample-astro",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "astro": "^4.16.18",
+    "@arubiku/pulse-lib": "^1.0.0"
+  }
+}

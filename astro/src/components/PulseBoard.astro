@@ -1,0 +1,46 @@
+---
+const token = Astro.props.token;
+const baseUrl = Astro.props.baseUrl ?? 'http://127.0.0.1:8787';
+---
+
+<section>
+  <h2>Pulse Astro Sample</h2>
+  <p id="pulse-status">connecting</p>
+  <button id="pulse-send">Enviar update</button>
+  <pre id="pulse-log"></pre>
+</section>
+
+<script type="module" define:vars={{ token, baseUrl }}>
+  import { PulseClient } from '@arubiku/pulse-lib';
+
+  const statusNode = document.getElementById('pulse-status');
+  const logNode = document.getElementById('pulse-log');
+  const sendButton = document.getElementById('pulse-send');
+
+  const client = new PulseClient(baseUrl, token, {
+    reconnectInterval: 1500,
+  });
+
+  client.on('status', (status) => {
+    statusNode.textContent = status;
+  });
+
+  client.on('presence', (event) => {
+    logNode.textContent = `${logNode.textContent}\n[presence] ${JSON.stringify(event, null, 2)}`;
+  });
+
+  client.on('message', (event) => {
+    logNode.textContent = `${logNode.textContent}\n[message] ${JSON.stringify(event, null, 2)}`;
+  });
+
+  sendButton?.addEventListener('click', () => {
+    client.send({
+      type: 'update',
+      entity: 'brick',
+      id: crypto.randomUUID(),
+      patch: { title: 'Updated from Astro' },
+    });
+  });
+
+  client.connect();
+</script>

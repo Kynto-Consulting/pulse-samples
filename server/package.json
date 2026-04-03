@@ -1,0 +1,8 @@
+{
+  "name": "pulse-sample-server",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@arubiku/pulse-lib": "^1.0.0"
+  }
+}

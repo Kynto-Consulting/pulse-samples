@@ -1,0 +1,8 @@
+{
+  "name": "pulse-sample-native-js",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@arubiku/pulse-lib": "^1.0.0"
+  }
+}

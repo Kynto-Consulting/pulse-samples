@@ -1,0 +1,14 @@
+{
+  "name": "pulse-samples",
+  "private": true,
+  "workspaces": [
+    "native-js",
+    "server",
+    "react",
+    "zustand",
+    "astro"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces"
+  }
+}
